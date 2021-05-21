@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{usuario.foto}}" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">{{usuario.nome}}</h5>
+          <p class="card-text">Tipo: {{usuario.tipo}}</p>
+          <a href="#" class="btn btn-primary">Editar Perfil</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card rounded mb-5" *ngFor='let postUser of usuario.postagem | orderBy : "data" : true'>
+        <div class="card-header">
+          <div class="row">
+            <div class="col-1 p-0 d-flex justify-content-center">
+              <img class=rounded-circle src={{postUser.foto}} width="50px" height="50px" />
+            </div>
+            <div class="col-9 p-0">
+              <h5 class="card-title m-0">{{postUser.nome}}</h5>
+              <small class="text-muted"> {{postUser.data | date: 'dd/MM/yyyy'}} às {{postUser.data | date:
+                'HH:mm'}}</small>
+            </div>
+            <div class="col-md-2 p-0">
+              <a [routerLink]="['/postagem-edit', postUser.id]" class="text-info mr-3">Editar</a>
+              <a [routerLink]="['/postagem-delete', postUser.id]" class="text-danger">Apagar</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h6 class="card-title m-0">{{postUser.titulo}}</h6>
+          <p class="card-text mt-3">{{postUser.texto}}</p>
+          <small class="text-muted">Tema: {{postUser.tema.descricao}}</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

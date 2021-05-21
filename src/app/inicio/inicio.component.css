@@ -1,0 +1,33 @@
+.fs-54{
+  font-size: 54pt;
+}
+
+.fs-18{
+  font-size: 18pt;
+}
+
+#inputComentario{
+  border-radius: 15px;
+}
+
+#button-addon2{
+  border-radius: 15px;
+}
+
+.btn-link{
+  text-decoration: none;
+}
+
+a.collapsed{
+  cursor: pointer;
+  font-size: 13pt;
+  margin: 0;
+}
+
+label.curtir{
+  cursor: pointer;
+}
+
+p.comentar{
+  cursor: pointer;
+}
